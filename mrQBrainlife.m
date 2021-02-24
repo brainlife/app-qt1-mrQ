@@ -22,25 +22,25 @@ if ~isdir(outDir)
 end
 
 % grab data name substring
-inputData_spgr.name = split(config.spgr_name);
+inputData_spgr.name = split(config.spgr_name)';
 inputData_seir.name = split(config.seir_name);
 
 % grab tr, te, flip angle, field strength, and it
-inputData_spgr.TR = split(config.spgr_tr);
-inputData_seir.TR = split(config.seir_tr);
-inputData_spgr.TE = split(config.spgr_te);
-inputData_seir.TE = split(config.seir_te);
-inputData_spgr.flipAngle = split(config.spgr_flipangle);
-inputData_spgr.fieldStrength = split(config.spgr_fieldstrength);
-inputData_seir.IT = split(config.seir_it);
+inputData_spgr.TR = str2num(config.spgr_tr);
+inputData_seir.TR = str2num(config.seir_tr);
+inputData_spgr.TE = str2num(config.spgr_te);
+inputData_seir.TE = str2num(config.seir_te);
+inputData_spgr.flipAngle = str2num(config.spgr_flipangle);
+inputData_spgr.fieldStrength = str2num(config.spgr_fieldstrength);
+inputData_seir.IT = str2num(config.seir_it);
 
 % grab reference image
 refimage = fullfile(config.refImage);
 
 % grab specific variables for mrQ
-antsThrs = config.antsThrs;
-autoacpc = config.autoacpc;
-shiftB1 = config.shiftB1;
+antsThrs = str2num(config.antsThrs);
+autoacpc = str2num(config.autoacpc);
+shiftB1 = str2num(config.shiftB1);
 
 % run mrQ
 mrQ_run(pwd,outDir,inputData_spgr,inputData_seir,[],{'autoacpc',autoacpc,'ref',refimage,'QuantAntsThresh',antsThrs,'ShiftB1',shiftB1})
