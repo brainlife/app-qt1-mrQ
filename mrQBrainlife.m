@@ -22,17 +22,17 @@ if ~isdir(outDir)
 end
 
 % grab data name substring
-inputData_spgr.name = config.spgr_name;
-inputData_seir.name = config.seir_name;
+inputData_spgr.name = split(config.spgr_name);
+inputData_seir.name = split(config.seir_name);
 
 % grab tr, te, flip angle, field strength, and it
-inputData_spgr.TR = config.spgr_tr;
-inputData_seir.TR = config.seir_tr;
-inputData_spgr.TE = config.spgr_te;
-inputData_seir.TE = config.seir_te;
-inputData_spgr.flipAngle = config.spgr_flipangle;
-inputData_spgr.fieldStrength = config.spgr_fieldstrength;
-inputData_seir.IT = config.seir_it;
+inputData_spgr.TR = split(config.spgr_tr);
+inputData_seir.TR = split(config.seir_tr);
+inputData_spgr.TE = split(config.spgr_te);
+inputData_seir.TE = split(config.seir_te);
+inputData_spgr.flipAngle = split(config.spgr_flipangle);
+inputData_spgr.fieldStrength = split(config.spgr_fieldstrength);
+inputData_seir.IT = split(config.seir_it);
 
 % grab reference image
 refimage = fullfile(config.refImage);
