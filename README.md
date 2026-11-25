@@ -10,7 +10,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="MIT license"></a>
 </p>
 
-## 🧠 At a glance
+## At a glance
 
 <!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
 
@@ -20,11 +20,11 @@ Calls mrQ_run (compiled MATLAB) on the SPGR and SEIR raw directories with the ac
 
 | | |
 |---|---|
-| 📥 **Inputs** | `raw` ×2 · `neuro/anat/t1w` |
-| 📤 **Outputs** | `raw` |
-| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.481](https://doi.org/10.25663/brainlife.app.481) |
+| **Inputs** | `raw` ×2 · `neuro/anat/t1w` |
+| **Outputs** | `raw` |
+| **Run it** | [doi.org/10.25663/brainlife.app.481](https://doi.org/10.25663/brainlife.app.481) |
 
-#### 📥 Inputs
+#### Inputs
 
 | Input | Datatype | Required | Description |
 |---|---|---|---|
@@ -32,14 +32,14 @@ Calls mrQ_run (compiled MATLAB) on the SPGR and SEIR raw directories with the ac
 | `seir` | `raw` (seir) | yes | Directory of spin-echo inversion recovery (SEIR) images. |
 | `refImage` | `neuro/anat/t1w` | yes | Reference T1w image that mrQ aligns the outputs to. |
 
-#### 📤 Outputs
+#### Outputs
 
 | Output | Datatype | Description |
 |---|---|---|
 | `results` | `raw` | mrQ output directory with the fitted quantitative maps. |
 
 <details>
-<summary><b>⚙️ Parameters</b> (12)</summary>
+<summary><b>Parameters</b> (12)</summary>
 
 | Parameter | Type | Default | Description |
 |---|---|---|---|
@@ -63,9 +63,9 @@ Calls mrQ_run (compiled MATLAB) on the SPGR and SEIR raw directories with the ac
 > [!WARNING]
 > This repository does not yet contain the `main` launcher that brainlife.io runs, so the App cannot run as published. The compiled MATLAB program it would call is in `compiled/`.
 
-## 🚀 Running the App
+## Running the App
 
-### ☁️ On brainlife.io
+### On brainlife.io
 
 The App is registered at [doi.org/10.25663/brainlife.app.481](https://doi.org/10.25663/brainlife.app.481). It fits a quantitative model to qT1 data with [mrQ](https://github.com/mezera/mrQ), following the methods of Mezer et al. (2013), and is meant to compute quantitative T1 and macromolecular tissue volume maps.
 
@@ -87,7 +87,7 @@ The App is registered at [doi.org/10.25663/brainlife.app.481](https://doi.org/10
 - `autoacpc` (default 0): passed to mrQ `autoacpc` (automatic ACPC alignment).
 - `shiftB1` (default 0): passed to mrQ `ShiftB1`.
 
-### 💻 Locally
+### Locally
 
 `mrQBrainlife.m` reads `config.json` from the working directory and calls `mrQ_run`. It is compiled with `compile.sh` (MATLAB R2017a, with vistasoft, SPM, jsonlab, mrQ and knkutils on the path); the compiled program needs the [MATLAB Runtime R2017a (v92)](https://www.mathworks.com/products/compiler/matlab-runtime.html).
 
@@ -122,13 +122,13 @@ The App is registered at [doi.org/10.25663/brainlife.app.481](https://doi.org/10
 
 If you have MATLAB, you can instead run `mrQBrainlife` with [mrQ](https://github.com/mezera/mrQ), [vistasoft](https://github.com/vistalab/vistasoft), [SPM](https://www.fil.ion.ucl.ac.uk/spm/software/spm12/), [jsonlab](https://github.com/fangq/jsonlab) and [knkutils](https://github.com/cvnlab/knkutils) on the path.
 
-## 📦 Outputs
+## Outputs
 
 ```text
 results/   mrQ output directory with the fitted quantitative maps (raw datatype, tagged mrq and qt1)
 ```
 
-## 📚 Citing
+## Citing
 
 > [!TIP]
 > If you use this App in your work, please cite the App, the software it builds on and brainlife.io (below). GitHub's **Cite this repository** button gives the App citation in APA and BibTeX.
@@ -138,13 +138,13 @@ results/   mrQ output directory with the fitted quantitative maps (raw datatype,
 - Fit qT1 models using mrQ. brainlife.io App. [doi:10.25663/brainlife.app.481](https://doi.org/10.25663/brainlife.app.481)
 - Hayashi S, Caron BA, Heinsfeld AS, et al. brainlife.io: a decentralized and open-source cloud platform to support neuroscience research. *Nature Methods* 21:809–813 (2024). [doi:10.1038/s41592-024-02237-2](https://doi.org/10.1038/s41592-024-02237-2)
 
-## 👥 Authors
+## Authors
 
 - Brad Caron
 
 **Contributors:** Soichi Hayashi
 
-## 💰 Funding
+## Funding
 
 [![Wellcome-226486/Z/22/Z](https://img.shields.io/badge/Wellcome-226486%2FZ%2F22%2FZ-purple.svg)](https://wellcome.org/)
 [![NIH-NINDS-U24NS140384](https://img.shields.io/badge/NIH_NINDS-U24NS140384-green.svg)](https://reporter.nih.gov/project-details/11261037)
@@ -163,6 +163,6 @@ results/   mrQ output directory with the fitted quantitative maps (raw datatype,
 
 <sub>brainlife.io is publicly funded, and acknowledging that support helps keep it running. This App was developed with support from Wellcome, the U.S. National Institutes of Health (including the BRAIN Initiative BRAIN CONNECTS program: The Axonal Projectome EXchange, U24NS140384, and the Center for Mesoscale Connectomics, UM1NS132207) and the U.S. National Science Foundation.</sub>
 
-## ⚖️ License
+## License
 
 MIT.
