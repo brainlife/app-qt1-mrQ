@@ -3,6 +3,45 @@
 
 # Fit qT1 models using mrQ
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+**Fits quantitative T1 (qT1) and related tissue maps from SPGR and SEIR acquisitions with mrQ (Mezer et al. 2013), aligned to a reference T1w image.**
+
+Calls mrQ_run (compiled MATLAB) on the SPGR and SEIR raw directories with the acquisition parameters given as parameters (TR, TE, flip angles, inversion times, field strength) and the reference T1w image. Use it to compute quantitative T1 and macromolecular tissue volume maps. Needs SPGR and SEIR data and their acquisition parameters. This branch has no main script, so it cannot run as published.
+
+Run it on brainlife.io: [https://doi.org/10.25663/brainlife.app.481](https://doi.org/10.25663/brainlife.app.481)
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `spgr` | `raw` (spgr) | yes | Directory of spoiled gradient echo (SPGR) images at multiple flip angles. |
+| `seir` | `raw` (seir) | yes | Directory of spin-echo inversion recovery (SEIR) images. |
+| `refImage` | `neuro/anat/t1w` | yes | Reference T1w image that mrQ aligns the outputs to. |
+
+| Output | Datatype | Description |
+|---|---|---|
+| `results` | `raw` | mrQ output directory with the fitted quantitative maps. |
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `spgr_name` | string |  | Space-separated names of the SPGR image files. |
+| `seir_name` | string |  | Space-separated names of the SEIR image files. |
+| `antsThrs` | number | `0.8` | Value passed to mrQ QuantAntsThresh. |
+| `autoacpc` | number | `0` | Value passed to mrQ autoacpc (automatic ACPC alignment). |
+| `shiftB1` | number | `0` | Value passed to mrQ ShiftB1. |
+| `spgr_tr` | string |  | Repetition time(s) of the SPGR images. |
+| `seir_tr` | string |  | Repetition time(s) of the SEIR images. |
+| `spgr_te` | string |  | Echo time(s) of the SPGR images. |
+| `seir_te` | string |  | Echo time(s) of the SEIR images. |
+| `spgr_flipangle` | string |  | Flip angles of the SPGR images, space-separated. |
+| `spgr_fieldstrength` | string |  | Magnetic field strength for the SPGR data. |
+| `seir_it` | string |  | Inversion times of the SEIR images, space-separated. |
+
+Please cite:
+- Mezer A. et al. Quantifying the local tissue volume and composition in individual brains with magnetic resonance imaging. Nat Med 19, 1667-1672 (2013). [doi:10.1038/nm.3390](https://doi.org/10.1038/nm.3390)
+- Avesani P. et al. The open diffusion data derivatives. Sci Data 6, 69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
+
+<!-- brainlife-app:end -->
+
 This app will fit a quantitative model to qT1 data using mrQ following methodologies outlined in Mezer et al (2013)
 
 ### Authors
